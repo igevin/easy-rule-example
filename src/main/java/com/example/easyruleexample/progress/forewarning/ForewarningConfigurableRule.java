@@ -1,6 +1,7 @@
 package com.example.easyruleexample.progress.forewarning;
 
 import com.example.easyruleexample.supporting.CompareOperator;
+import com.example.easyruleexample.supporting.CompareTool;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.SneakyThrows;
@@ -22,13 +23,7 @@ public class ForewarningConfigurableRule {
     }
 
     public boolean compare(double value) {
-        switch (operator) {
-            case GREATER_THAN: return threshold.compareTo(value) < 0;
-            case GREATER_THAN_OR_EQUAL_TO: return threshold.compareTo(value) <= 0;
-            case LESS_THAN: return threshold.compareTo(value) > 0;
-            case LESS_THAN_OR_EQUAL_TO: return threshold.compareTo(value) >= 0;
-            default: return threshold.compareTo(value) == 0;
-        }
+        return CompareTool.compare(operator, value, threshold);
     }
 
     @SneakyThrows

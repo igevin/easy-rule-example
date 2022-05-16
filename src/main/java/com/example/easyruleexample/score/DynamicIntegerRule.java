@@ -1,6 +1,7 @@
 package com.example.easyruleexample.score;
 
 import com.example.easyruleexample.supporting.CompareOperator;
+import com.example.easyruleexample.supporting.CompareTool;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.jeasy.rules.api.Rule;
@@ -16,13 +17,7 @@ public class DynamicIntegerRule {
 
 
     public boolean compare(Integer value) {
-        switch (operator) {
-            case GREATER_THAN: return threshold.compareTo(value) < 0;
-            case GREATER_THAN_OR_EQUAL_TO: return threshold.compareTo(value) <= 0;
-            case LESS_THAN: return threshold.compareTo(value) > 0;
-            case LESS_THAN_OR_EQUAL_TO: return threshold.compareTo(value) >= 0;
-            default: return threshold.compareTo(value) == 0;
-        }
+        return CompareTool.compare(operator, value, threshold);
     }
 
 
