@@ -1,6 +1,5 @@
 package com.example.easyruleexample.progress.forewarning;
 
-import com.example.easyruleexample.score.ScoreLauncherByRangeRule;
 import com.example.easyruleexample.supporting.CompareOperator;
 import com.example.easyruleexample.supporting.RuleEngineTool;
 import org.jeasy.rules.api.Facts;
@@ -13,7 +12,7 @@ import java.util.List;
 
 public class ForewarningLauncher {
     public static void main(String[] args) {
-        SpringApplication.run(ScoreLauncherByRangeRule.class, args);
+        SpringApplication.run(ForewarningLauncher.class, args);
 
         // create engine
         RulesEngine rulesEngine = RuleEngineTool.createRulesEngine();
