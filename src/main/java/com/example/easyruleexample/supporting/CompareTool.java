@@ -16,8 +16,18 @@ public class CompareTool {
         }
     }
 
+    public static<T extends Comparable<T>> boolean compare(CompareOperator operator, T target, T valve) {
+        switch (operator) {
+            case GREATER_THAN: return valve.compareTo(target) < 0;
+            case GREATER_THAN_OR_EQUAL_TO: return valve.compareTo(target) <= 0;
+            case LESS_THAN: return valve.compareTo(target) > 0;
+            case LESS_THAN_OR_EQUAL_TO: return valve.compareTo(target) >= 0;
+            default: return valve.compareTo(target) == 0;
+        }
+    }
+
     @SneakyThrows
-    public static boolean compare(CompareOperator operator, Object target, Object valve) {
+    public static boolean objectCompare(CompareOperator operator, Object target, Object valve) {
         Method[] methods = target.getClass().getMethods();
         Method compareTo = Arrays.stream(methods).filter(m -> m.getName().equals("compareTo")).findAny().orElse(null);
         if (compareTo == null) {

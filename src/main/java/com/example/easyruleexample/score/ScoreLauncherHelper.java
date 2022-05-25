@@ -1,5 +1,6 @@
 package com.example.easyruleexample.score;
 
+import com.example.easyruleexample.pattern.DataHolder;
 import org.jeasy.rules.api.Facts;
 import org.jeasy.rules.api.Rules;
 import org.jeasy.rules.api.RulesEngine;
@@ -18,6 +19,15 @@ public class ScoreLauncherHelper {
             facts.put(RuleTarget.getName(), target);
             rulesEngine.fire(rules, facts);
             System.out.println("value: " + target.getValue() + ", score: " + target.getScore());
+        }
+    }
+
+    public static void validateFactsFromPattern(Facts facts, RulesEngine rulesEngine, Rules rules) {
+        for (int i = 1; i <= 10; i++) {
+            DataHolder<Integer, Integer> target = new DataHolder<>(i * 10);
+            facts.put(DataHolder.getName(), target);
+            rulesEngine.fire(rules, facts);
+            System.out.println("value: " + target.getInput() + ", score: " + target.getOutput());
         }
     }
 
