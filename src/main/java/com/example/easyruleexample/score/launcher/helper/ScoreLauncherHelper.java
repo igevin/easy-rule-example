@@ -1,6 +1,7 @@
-package com.example.easyruleexample.score;
+package com.example.easyruleexample.score.launcher.helper;
 
 import com.example.easyruleexample.pattern.DataHolder;
+import com.example.easyruleexample.score.RuleTarget;
 import org.jeasy.rules.api.Facts;
 import org.jeasy.rules.api.Rules;
 import org.jeasy.rules.api.RulesEngine;

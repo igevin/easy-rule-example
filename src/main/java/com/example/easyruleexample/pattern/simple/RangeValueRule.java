@@ -1,7 +1,6 @@
 package com.example.easyruleexample.pattern.simple;
 
 import com.example.easyruleexample.pattern.DataHolder;
-import com.example.easyruleexample.score.RuleTarget;
 import com.example.easyruleexample.supporting.CompareOperator;
 import com.example.easyruleexample.supporting.CompareTool;
 import lombok.Getter;

@@ -10,7 +10,7 @@ import org.jeasy.rules.core.RuleBuilder;
 
 @Getter
 @AllArgsConstructor
-public abstract class SerialSingleValueRule<T extends Comparable<T>, V> {
+public abstract class UnorderedSingleValueRule<T extends Comparable<T>, V> {
     private final String name;
     private final CompareOperator operator;
     private final T threshold;
@@ -27,11 +27,7 @@ public abstract class SerialSingleValueRule<T extends Comparable<T>, V> {
         return builder().build();
     }
 
-    public Rule toEasyRule(int priority) {
-        return builder().priority(priority).build();
-    }
-
-    private RuleBuilder builder() {
+    protected RuleBuilder builder() {
         return new RuleBuilder()
                 .name(name)
                 .description(name)

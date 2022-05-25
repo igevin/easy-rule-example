@@ -1,5 +1,7 @@
-package com.example.easyruleexample.score;
+package com.example.easyruleexample.score.launcher;
 
+import com.example.easyruleexample.score.DynamicIntegerRangeRule;
+import com.example.easyruleexample.score.launcher.helper.ScoreLauncherHelper;
 import org.jeasy.rules.api.Facts;
 import org.jeasy.rules.api.Rules;
 import org.jeasy.rules.api.RulesEngine;
@@ -10,9 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootApplication
-public class ScoreLauncherByRangeRule {
+public class ScoreByRangeRule {
     public static void main(String[] args) {
-        SpringApplication.run(ScoreLauncherByRangeRule.class, args);
+        SpringApplication.run(ScoreByRangeRule.class, args);
 
         // create engine
         RulesEngine rulesEngine = ScoreLauncherHelper.createRulesEngine();

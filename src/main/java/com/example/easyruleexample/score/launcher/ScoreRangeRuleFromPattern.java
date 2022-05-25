@@ -1,8 +1,7 @@
-package com.example.easyruleexample.score;
+package com.example.easyruleexample.score.launcher;
 
-import com.example.easyruleexample.pattern.simple.example.ScoreRangeValueRule;
-import com.example.easyruleexample.pattern.simple.example.ScoreValueRule;
-import com.example.easyruleexample.supporting.CompareOperator;
+import com.example.easyruleexample.score.ScoreRangeValueRule;
+import com.example.easyruleexample.score.launcher.helper.ScoreLauncherHelper;
 import org.jeasy.rules.api.Facts;
 import org.jeasy.rules.api.Rules;
 import org.jeasy.rules.api.RulesEngine;

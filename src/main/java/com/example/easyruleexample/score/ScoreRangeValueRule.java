@@ -1,9 +1,7 @@
-package com.example.easyruleexample.pattern.simple.example;
+package com.example.easyruleexample.score;
 
 import com.example.easyruleexample.pattern.DataHolder;
 import com.example.easyruleexample.pattern.simple.RangeValueRule;
-import com.example.easyruleexample.pattern.simple.SerialSingleValueRule;
-import com.example.easyruleexample.supporting.CompareOperator;
 
 public class ScoreRangeValueRule extends RangeValueRule<Integer, Integer> {
     private final Integer score;
