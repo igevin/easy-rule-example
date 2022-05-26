@@ -1,4 +1,4 @@
-package com.igevin.easyruleexample.score;
+package com.igevin.easyruleexample.score.pattern;
 
 import com.igevin.easyruleexample.pattern.ValueHolder;
 import com.igevin.easyruleexample.pattern.simple.OrderedSingleValueRule;

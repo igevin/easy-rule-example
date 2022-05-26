@@ -1,6 +1,6 @@
 package com.igevin.easyruleexample.score.launcher;
 
-import com.igevin.easyruleexample.score.ScoreRangeValueRule;
+import com.igevin.easyruleexample.score.pattern.ScoreRangeValueRule;
 import com.igevin.easyruleexample.score.launcher.helper.ScoreLauncherHelper;
 import org.jeasy.rules.api.Facts;
 import org.jeasy.rules.api.Rules;
