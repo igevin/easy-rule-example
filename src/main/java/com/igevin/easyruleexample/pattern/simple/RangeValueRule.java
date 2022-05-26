@@ -17,7 +17,7 @@ import java.lang.reflect.ParameterizedType;
  * @param <V> 返回结果类型
  */
 @Getter
-public abstract class RangeValueRule<T extends Comparable<T>, V> {
+public abstract class RangeValueRule<T extends Number & Comparable<T>, V> {
     private final String name;
     private final String valueRange;
     private CompareOperator leftOperator;
@@ -80,6 +80,9 @@ public abstract class RangeValueRule<T extends Comparable<T>, V> {
     private void parseValve(String valueRange) {
         String range = valueRange.substring(1, valueRange.length() - 1);
         String[] valuePair = range.split(",");
+        if (valuePair.length != 2) {
+            throw new RuntimeException("invalid value range");
+        }
         try {
             leftValve = parseValue(valuePair[0].trim());
         } catch (Exception exception) {
@@ -100,6 +103,9 @@ public abstract class RangeValueRule<T extends Comparable<T>, V> {
     protected T parseValue(String s) throws Exception {
         Class<?> clazz = ((Class<?>) ((ParameterizedType) getClass()
                 .getGenericSuperclass()).getActualTypeArguments()[0]);
+        if (!Number.class.isAssignableFrom(clazz)) {
+            throw new RuntimeException(clazz.getName() + " is not Number");
+        }
         Constructor<?> constructor = clazz.getConstructor(String.class);
         Object result = constructor.newInstance(s);
         return (T) result;
