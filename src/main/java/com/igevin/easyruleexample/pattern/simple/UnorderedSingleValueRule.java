@@ -1,6 +1,6 @@
 package com.igevin.easyruleexample.pattern.simple;
 
-import com.igevin.easyruleexample.pattern.DataHolder;
+import com.igevin.easyruleexample.pattern.ValueHolder;
 import com.igevin.easyruleexample.supporting.CompareOperator;
 import com.igevin.easyruleexample.supporting.CompareTool;
 import lombok.AllArgsConstructor;
@@ -20,7 +20,7 @@ public abstract class UnorderedSingleValueRule<T extends Comparable<T>, V> {
         return CompareTool.compare(operator, value, threshold);
     }
 
-    protected abstract void action(DataHolder<T, V> dataHolder);
+    protected abstract void action(ValueHolder<T, V> valueHolder);
 
 
     public Rule toEasyRule() {
@@ -32,11 +32,11 @@ public abstract class UnorderedSingleValueRule<T extends Comparable<T>, V> {
                 .name(name)
                 .description(name)
                 .when(facts -> {
-                    DataHolder<T, V> target = (DataHolder<T, V>) facts.getFact(DataHolder.getName()).getValue();
+                    ValueHolder<T, V> target = (ValueHolder<T, V>) facts.getFact(ValueHolder.getName()).getValue();
                     return compare(target.getInput());
                 })
                 .then(facts -> {
-                    DataHolder<T, V> target = (DataHolder<T, V>) facts.getFact(DataHolder.getName()).getValue();
+                    ValueHolder<T, V> target = (ValueHolder<T, V>) facts.getFact(ValueHolder.getName()).getValue();
                     action(target);
                 });
     }

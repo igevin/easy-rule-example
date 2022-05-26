@@ -1,6 +1,6 @@
 package com.igevin.easyruleexample.score;
 
-import com.igevin.easyruleexample.pattern.DataHolder;
+import com.igevin.easyruleexample.pattern.ValueHolder;
 import com.igevin.easyruleexample.pattern.simple.OrderedSingleValueRule;
 import com.igevin.easyruleexample.supporting.CompareOperator;
 
@@ -12,7 +12,7 @@ public class ScoreValueRule extends OrderedSingleValueRule<Integer, Integer> {
     }
 
     @Override
-    protected void action(DataHolder<Integer, Integer> dataHolder) {
-        dataHolder.setOutput(score);
+    protected void action(ValueHolder<Integer, Integer> valueHolder) {
+        valueHolder.setOutput(score);
     }
 }

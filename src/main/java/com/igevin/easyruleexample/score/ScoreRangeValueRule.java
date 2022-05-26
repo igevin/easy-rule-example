@@ -1,6 +1,6 @@
 package com.igevin.easyruleexample.score;
 
-import com.igevin.easyruleexample.pattern.DataHolder;
+import com.igevin.easyruleexample.pattern.ValueHolder;
 import com.igevin.easyruleexample.pattern.simple.RangeValueRule;
 
 public class ScoreRangeValueRule extends RangeValueRule<Integer, Integer> {
@@ -11,7 +11,7 @@ public class ScoreRangeValueRule extends RangeValueRule<Integer, Integer> {
     }
 
     @Override
-    protected void action(DataHolder<Integer, Integer> dataHolder) {
-        dataHolder.setOutput(score);
+    protected void action(ValueHolder<Integer, Integer> valueHolder) {
+        valueHolder.setOutput(score);
     }
 }

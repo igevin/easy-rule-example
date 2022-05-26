@@ -1,6 +1,6 @@
 package com.igevin.easyruleexample.pattern.simple;
 
-import com.igevin.easyruleexample.pattern.DataHolder;
+import com.igevin.easyruleexample.pattern.ValueHolder;
 import com.igevin.easyruleexample.supporting.CompareOperator;
 import com.igevin.easyruleexample.supporting.CompareTool;
 import lombok.Getter;
@@ -104,18 +104,18 @@ public abstract class RangeValueRule<T extends Comparable<T>, V> {
         return builder().build();
     }
 
-    protected abstract void action(DataHolder<T, V> dataHolder);
+    protected abstract void action(ValueHolder<T, V> valueHolder);
 
     private RuleBuilder builder() {
         return new RuleBuilder()
                 .name(name)
                 .description(name)
                 .when(facts -> {
-                    DataHolder<T, V> target = (DataHolder<T, V>) facts.getFact(DataHolder.getName()).getValue();
+                    ValueHolder<T, V> target = (ValueHolder<T, V>) facts.getFact(ValueHolder.getName()).getValue();
                     return compare(target.getInput());
                 })
                 .then(facts -> {
-                    DataHolder<T, V> target = (DataHolder<T, V>) facts.getFact(DataHolder.getName()).getValue();
+                    ValueHolder<T, V> target = (ValueHolder<T, V>) facts.getFact(ValueHolder.getName()).getValue();
                     action(target);
                 });
     }

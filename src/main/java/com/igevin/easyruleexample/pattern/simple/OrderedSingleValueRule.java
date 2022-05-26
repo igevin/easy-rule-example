@@ -1,6 +1,6 @@
 package com.igevin.easyruleexample.pattern.simple;
 
-import com.igevin.easyruleexample.pattern.DataHolder;
+import com.igevin.easyruleexample.pattern.ValueHolder;
 import com.igevin.easyruleexample.supporting.CompareOperator;
 import lombok.Getter;
 import org.jeasy.rules.api.Rule;
@@ -13,7 +13,7 @@ public abstract class OrderedSingleValueRule<T extends Comparable<T>, V> extends
         this.priority = priority;
     }
 
-    protected abstract void action(DataHolder<T, V> dataHolder);
+    protected abstract void action(ValueHolder<T, V> valueHolder);
 
     public Rule toEasyRule() {
         return builder().priority(priority).build();

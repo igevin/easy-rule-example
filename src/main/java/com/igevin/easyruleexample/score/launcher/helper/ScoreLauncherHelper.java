@@ -1,6 +1,6 @@
 package com.igevin.easyruleexample.score.launcher.helper;
 
-import com.igevin.easyruleexample.pattern.DataHolder;
+import com.igevin.easyruleexample.pattern.ValueHolder;
 import com.igevin.easyruleexample.score.RuleTarget;
 import org.jeasy.rules.api.Facts;
 import org.jeasy.rules.api.Rules;
@@ -25,8 +25,8 @@ public class ScoreLauncherHelper {
 
     public static void validateFactsFromPattern(Facts facts, RulesEngine rulesEngine, Rules rules) {
         for (int i = 1; i <= 10; i++) {
-            DataHolder<Integer, Integer> target = new DataHolder<>(i * 10);
-            facts.put(DataHolder.getName(), target);
+            ValueHolder<Integer, Integer> target = new ValueHolder<>(i * 10);
+            facts.put(ValueHolder.getName(), target);
             rulesEngine.fire(rules, facts);
             System.out.println("value: " + target.getInput() + ", score: " + target.getOutput());
         }

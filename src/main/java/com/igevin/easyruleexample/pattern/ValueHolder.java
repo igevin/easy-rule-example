@@ -8,13 +8,13 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class DataHolder<T extends Comparable<T>, V> {
+public class ValueHolder<T extends Comparable<T>, V> {
     @Getter
     private static final String name = "dataHolder";
     private T input;
     private V output;
 
-    public DataHolder(T input) {
+    public ValueHolder(T input) {
         this.input = input;
     }
 }
