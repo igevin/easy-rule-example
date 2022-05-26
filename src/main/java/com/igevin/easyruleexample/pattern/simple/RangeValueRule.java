@@ -10,6 +10,12 @@ import org.jeasy.rules.core.RuleBuilder;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.ParameterizedType;
 
+/**
+ * 区间阈值规则
+ *
+ * @param <T> 比较字段类型
+ * @param <V> 返回结果类型
+ */
 @Getter
 public abstract class RangeValueRule<T extends Comparable<T>, V> {
     private final String name;

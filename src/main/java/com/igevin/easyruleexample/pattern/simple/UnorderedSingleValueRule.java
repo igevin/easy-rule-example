@@ -8,6 +8,12 @@ import lombok.Getter;
 import org.jeasy.rules.api.Rule;
 import org.jeasy.rules.core.RuleBuilder;
 
+/**
+ * 无序阈值规则
+ *
+ * @param <T> 比较字段类型
+ * @param <V> 返回结果类型
+ */
 @Getter
 @AllArgsConstructor
 public abstract class UnorderedSingleValueRule<T extends Comparable<T>, V> {

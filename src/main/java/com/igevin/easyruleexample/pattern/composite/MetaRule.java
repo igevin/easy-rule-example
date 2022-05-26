@@ -13,6 +13,13 @@ import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Optional;
 
+/**
+ * 复合规则中的原子规则
+ *
+ * @param <T> 比较字段的类型
+ * @param <K> 目标对象
+ * @param <V> 返回结果类型
+ */
 @Getter
 @AllArgsConstructor
 public abstract class MetaRule<T extends Comparable<T>, K, V> {

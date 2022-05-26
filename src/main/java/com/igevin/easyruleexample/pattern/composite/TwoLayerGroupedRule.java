@@ -7,6 +7,11 @@ import org.jeasy.rules.support.composite.UnitRuleGroup;
 
 import java.util.List;
 
+/**
+ * 两层分组规则
+ *
+ * @param <E> 原子规则类型
+ */
 public class TwoLayerGroupedRule<E extends MetaRule>{
     @Getter
     private static final String ruleName = "TwoLayerGroupedRule";
