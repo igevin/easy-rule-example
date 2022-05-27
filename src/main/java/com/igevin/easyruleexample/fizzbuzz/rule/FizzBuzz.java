@@ -18,7 +18,7 @@ public class FizzBuzz extends UnitRuleGroup {
 
     @Override
     public void execute(Facts facts) throws Exception {
-        Integer number = (Integer) facts.getFact("number").getValue();
+        Integer number = facts.get("number");
         System.out.printf("fizzbuzz(%s)", number);
 
     }

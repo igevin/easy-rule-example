@@ -13,11 +13,11 @@ public class RuleFactory2 {
                 .description("fizz")
                 .priority(1)
                 .when(facts -> {
-                    Integer number = (Integer) facts.getFact("number").getValue();
+                    Integer number = facts.get("number");
                     return number % 5 == 0;
                 })
                 .then(facts -> {
-                    Integer number = (Integer) facts.getFact("number").getValue();
+                    Integer number = facts.get("number");
                     System.out.printf("fizz(%s)\n", number);
                 }).build();
     }
@@ -28,11 +28,11 @@ public class RuleFactory2 {
                 .description("buzz")
                 .priority(2)
                 .when(facts -> {
-                    Integer number = (Integer) facts.getFact("number").getValue();
+                    Integer number = facts.get("number");
                     return number % 7 == 0;
                 })
                 .then(facts -> {
-                    Integer number = (Integer) facts.getFact("number").getValue();
+                    Integer number = facts.get("number");
                     System.out.printf("buzz(%s)\n", number);
                 }).build();
     }
@@ -43,11 +43,11 @@ public class RuleFactory2 {
                 .description("nonFizzBuzz")
                 .priority(3)
                 .when(facts -> {
-                    Integer number = (Integer) facts.getFact("number").getValue();
+                    Integer number = facts.get("number");
                     return number % 5 != 0 || number % 7 != 0;
                 })
                 .then(facts -> {
-                    Integer number = (Integer) facts.getFact("number").getValue();
+                    Integer number = facts.get("number");
                     System.out.println(number);
                 }).build();
     }
@@ -58,11 +58,11 @@ public class RuleFactory2 {
                 .description("fizzbuzz")
                 .priority(0)
                 .when(facts -> {
-                    Integer number = (Integer) facts.getFact("number").getValue();
+                    Integer number = facts.get("number");
                     return number % 5 == 0 && number % 7 == 0;
                 })
                 .then(facts -> {
-                    Integer number = (Integer) facts.getFact("number").getValue();
+                    Integer number = facts.get("number");
                     System.out.printf("fizzbuzz(%s)\n", number);
                 }).build();
     }
