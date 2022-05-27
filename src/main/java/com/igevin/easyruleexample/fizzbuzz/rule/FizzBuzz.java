@@ -1,6 +1,7 @@
 package com.igevin.easyruleexample.fizzbuzz.rule;
 
 
+import org.jeasy.rules.api.Facts;
 import org.jeasy.rules.support.composite.UnitRuleGroup;
 
 public class FizzBuzz extends UnitRuleGroup {
@@ -13,5 +14,12 @@ public class FizzBuzz extends UnitRuleGroup {
     @Override
     public int getPriority() {
         return 0;
+    }
+
+    @Override
+    public void execute(Facts facts) throws Exception {
+        Integer number = (Integer) facts.getFact("number").getValue();
+        System.out.printf("fizzbuzz(%s)", number);
+
     }
 }
