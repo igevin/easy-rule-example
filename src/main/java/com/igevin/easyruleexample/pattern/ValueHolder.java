@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 /**
- * 输入输出容器
+ * 值输入输出容器
  *
  * @param <T> 输入值类型
  * @param <V> 返回结果类型
