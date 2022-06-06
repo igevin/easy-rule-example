@@ -1,6 +1,5 @@
 package com.igevin.easyruleexample.pattern.composite;
 
-import com.igevin.easyruleexample.progress.forewarning.ForewarningConfigurableRule;
 import lombok.Getter;
 import org.jeasy.rules.support.composite.ActivationRuleGroup;
 import org.jeasy.rules.support.composite.UnitRuleGroup;
